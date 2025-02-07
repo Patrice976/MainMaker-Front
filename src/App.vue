@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div>Salam les roya</div>
+  <div>Bienvenu sur Main Maker </div>
 </template>
 
 <style scoped>

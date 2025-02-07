@@ -1,13 +1,11 @@
-FROM node:22.13.1-alpine AS build
+FROM node:22.13.1-alpine
 WORKDIR /app
 
-COPY ./package.json ./package-lock.json ./
+COPY package*.json ./
 RUN npm install 
 
-COPY . .
+COPY . ./
 
-RUN npm run build
+EXPOSE 8000
 
-FROM nginx:alpine
-COPY --from=build /app/dist /usr/share/nginx/html
-EXPOSE 80 
+CMD ["npm","run","dev"]

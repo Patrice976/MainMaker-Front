@@ -1,12 +1,16 @@
+version: '3.8'
+
 services:
-  vuejs:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  vite_app:
+    build: .
+    container_name: vite_vue_app
     ports:
-      - '8080:80'
+      - "8000:8000"
     volumes:
-      - ./MainMakerFront:/app
+      # [EXPLICATION: Remplacer <chemin_local_projet> par le chemin absolu vers votre dossier de projet sur votre machine]
+      - ./:/app
+      # Volume pour les node_modules
       - /app/node_modules
     environment:
-      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+      - HOST=0.0.0.0
