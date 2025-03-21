@@ -5,7 +5,7 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     host: '0.0.0.0',  // Important: permet l'accès depuis l'extérieur du conteneur
-    port: 8000,
+    port: 5173,
     watch: {
       usePolling: true
     }
